@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+	"-//Hibernate/Hibernate Configuration DTD 3.0//EN"
+	"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+<session-factory>
+	<property name="hibernate.dialect">
+		org.hibernate.dialect.MySQL5Dialect
+	</property>
+	<property name="hibernate.hbm2ddl.auto">update</property>
+	<property name="hibernate.show_sql">true</property>
+
+	<!-- 配置启用二级缓存 -->
+	<property name="hibernate.cache.use_second_level_cache">
+		true
+	</property>
+
+	<!--配置二级缓存的供应商 -->
+	<property name="hibernate.cache.provider_class">
+		org.hibernate.cache.EhCacheProvider
+	</property>
+
+	<!-- 启用查询缓存 -->
+	<property name="hibernate.cache.use_query_cache">true</property>
+	<!--设置自动提交的方式  -->
+	<property name="connection.autocommit">true</property>
+	<property name="myeclipse.connection.profile">mysql</property>
+	<property name="connection.url">jdbc:mysql://localhost:3306/itcast0807crm</property>
+	<property name="connection.username">root</property>
+	<property name="connection.password">root</property>
+	<property name="connection.driver_class">
+		com.mysql.jdbc.Driver
+	</property>
+	<property name="dialect">org.hibernate.dialect.MySQLDialect</property>
+
+
+	<mapping resource="cn/itcast/crm/domain/SysUserGroup.hbm.xml" />
+	
+
+	
+</session-factory>
+</hibernate-configuration>
